@@ -195,12 +195,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   color: #aaaaaa;
   font-family: var(--font-sans), sans-serif;
   font-size: 14px;
   font-weight: 500;
-  padding: 12px 22px;
+  padding: 12px 16px;
   border-radius: 9999px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.04);

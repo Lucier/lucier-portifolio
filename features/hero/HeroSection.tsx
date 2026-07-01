@@ -1,7 +1,7 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
 import { motion, type BezierDefinition, type Variants } from 'framer-motion'
-import { ArrowDown } from 'lucide-react'
+import { ArrowDown, Download } from 'lucide-react'
 import Image from 'next/image'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { SiGithub } from 'react-icons/si'
@@ -123,7 +123,7 @@ export function HeroSection() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="flex flex-wrap justify-center gap-3 lg:justify-start"
+              className="flex flex-wrap justify-center gap-2 lg:justify-start"
             >
               <button
                 className="glass-btn"
@@ -132,6 +132,14 @@ export function HeroSection() {
                 Ver Projetos
                 <ArrowDown className="h-4 w-4" />
               </button>
+              <a
+                href="/curriculo.pdf"
+                download="Lucier_Ferreira_Lima_Curriculo.pdf"
+                className="glass-btn-ghost"
+              >
+                <Download className="h-4 w-4" />
+                Currículo
+              </a>
               <a
                 href="https://github.com/Lucier"
                 target="_blank"

@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Download } from 'lucide-react'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { cn } from '@/lib/utils'
 
@@ -66,6 +66,16 @@ export function Navbar() {
             </nav>
 
             <div className="flex items-center gap-2">
+              {/* Download CV button — desktop */}
+              <a
+                href="/curriculo.pdf"
+                download="Lucier_Ferreira_Lima_Curriculo.pdf"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-violet-400 border border-violet-600/30 bg-violet-600/10 hover:bg-violet-600/20 transition-colors"
+              >
+                <Download className="h-3.5 w-3.5" />
+                Currículo
+              </a>
+
               {/* Mobile menu button */}
               <button
                 className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
@@ -129,6 +139,16 @@ export function Navbar() {
               {item.label}
             </button>
           ))}
+
+          <a
+            href="/curriculo.pdf"
+            download="Lucier_Ferreira_Lima_Curriculo.pdf"
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center gap-2 px-4 py-3 rounded-lg text-base font-medium text-violet-400 border border-violet-600/30 bg-violet-600/10 hover:bg-violet-600/20 transition-colors mt-2"
+          >
+            <Download className="h-4 w-4" />
+            Baixar Currículo
+          </a>
         </nav>
       </div>
     </>

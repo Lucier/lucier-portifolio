@@ -201,7 +201,7 @@ export function ContactSection() {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-5" suppressHydrationWarning>
                     <div>
                       <label
                         htmlFor="name"
@@ -216,6 +216,7 @@ export function ContactSection() {
                         value={form.name}
                         onChange={handleChange}
                         required
+                        suppressHydrationWarning
                         className="border-border/60 bg-muted/50 text-white placeholder:text-muted-foreground/60 focus:border-violet-600"
                       />
                     </div>
@@ -234,6 +235,7 @@ export function ContactSection() {
                         value={form.email}
                         onChange={handleChange}
                         required
+                        suppressHydrationWarning
                         className="border-border/60 bg-muted/50 text-white placeholder:text-muted-foreground/60 focus:border-violet-600"
                       />
                     </div>
@@ -252,6 +254,7 @@ export function ContactSection() {
                         onChange={handleChange}
                         required
                         rows={5}
+                        suppressHydrationWarning
                         className="resize-none border-border/60 bg-muted/50 text-white placeholder:text-muted-foreground/60 focus:border-violet-600"
                       />
                     </div>
