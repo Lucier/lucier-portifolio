@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Renderizza Design System */
+:root {
+  --background: #0f0e15;
+  --foreground: #f0ede8;
+  --card: #16141f;
+  --card-foreground: #f0ede8;
+  --popover: #16141f;
+  --popover-foreground: #f0ede8;
+  --primary: #783bff;
+  --primary-foreground: #ffffff;
+  --secondary: #1d1a28;
+  --secondary-foreground: #f0ede8;
+  --muted: #1d1a28;
+  --muted-foreground: #aaaaaa;
+  --accent: #252233;
+  --accent-foreground: #f0ede8;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #2a2638;
+  --input: #252233;
+  --ring: #783bff;
+  --chart-1: #783bff;
+  --chart-2: #9d6dff;
+  --chart-3: #5e21c7;
+  --chart-4: #3d168a;
+  --chart-5: #252233;
+  --radius: 0.875rem;
+  --sidebar: #16141f;
+  --sidebar-foreground: #f0ede8;
+  --sidebar-primary: #783bff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #252233;
+  --sidebar-accent-foreground: #f0ede8;
+  --sidebar-border: #2a2638;
+  --sidebar-ring: #783bff;
+}
+
+.dark {
+  --background: #0f0e15;
+  --foreground: #f0ede8;
+  --card: #16141f;
+  --card-foreground: #f0ede8;
+  --popover: #16141f;
+  --popover-foreground: #f0ede8;
+  --primary: #783bff;
+  --primary-foreground: #ffffff;
+  --secondary: #1d1a28;
+  --secondary-foreground: #f0ede8;
+  --muted: #1d1a28;
+  --muted-foreground: #aaaaaa;
+  --accent: #252233;
+  --accent-foreground: #f0ede8;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #2a2638;
+  --input: #252233;
+  --ring: #783bff;
+  --chart-1: #783bff;
+  --chart-2: #9d6dff;
+  --chart-3: #5e21c7;
+  --chart-4: #3d168a;
+  --chart-5: #252233;
+  --sidebar: #16141f;
+  --sidebar-foreground: #f0ede8;
+  --sidebar-primary: #783bff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #252233;
+  --sidebar-accent-foreground: #f0ede8;
+  --sidebar-border: #2a2638;
+  --sidebar-ring: #783bff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Purple radial glow background */
+.glow-bg {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(120, 59, 255, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glass pill button — Renderizza style */
+.glass-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgba(120, 59, 255, 0.35) 0%,
+    rgba(120, 59, 255, 0.20) 100%
+  );
+  border: 1px solid rgba(157, 109, 255, 0.45);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 32px rgba(120, 59, 255, 0.35);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.glass-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    180deg,
+    rgba(120, 59, 255, 0.50) 0%,
+    rgba(120, 59, 255, 0.32) 100%
+  );
+  border-color: rgba(157, 109, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 16px 48px rgba(120, 59, 255, 0.50);
+}
+
+.glass-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #aaaaaa;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.glass-btn-ghost:hover {
+  color: #f0ede8;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0e15;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2638;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #783bff;
+}
+
+/* Section spacing utility */
+.section-padding {
+  @apply py-24 px-4 sm:px-6 lg:px-8;
+}
+
+/* Gradient text — Renderizza white-fade style */
+.gradient-text {
+  @apply bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent;
+}
+
+/* Purple accent gradient */
+.gradient-purple {
+  @apply bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent;
+}
