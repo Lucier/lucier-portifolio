@@ -38,7 +38,7 @@ export function Footer() {
           {/* Branding */}
           <div className="text-center sm:text-left">
             <p className="text-muted-foreground text-sm">
-              Desenvolvido por <span className="text-red-400"></span> por{' '}
+              Desenvolvido<span className="text-red-400"></span> por{' '}
               <span className="font-semibold text-white">Lucier Lima</span>
             </p>
             <p className="text-muted-foreground/40 mt-1 text-xs">
