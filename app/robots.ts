@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://lucierlima.dev/sitemap.xml',
+    sitemap: 'https://lucier-portifolio.vercel.app/sitemap.xml',
   }
 }
