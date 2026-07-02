@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import type { Metadata } from 'next'
-import { Montserrat, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono, Montserrat } from 'next/font/google'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -18,7 +18,11 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lucierlima.dev'),
+  verification: {
+    google: 'tk2EnWsp3OWttCwVieJDgiy06-ZbgEhi2xbSnJtPfCU',
+  },
+
+  metadataBase: new URL('https://lucier-portifolio.vercel.app/'),
   title: {
     default: 'Lucier Lima — Backend Developer',
     template: '%s | Lucier Lima',
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://lucierlima.dev',
+    url: 'https://lucier-portifolio.vercel.app/',
     title: 'Lucier Lima — Backend Developer',
     description:
       'Especializado no desenvolvimento de APIs escaláveis, sistemas SaaS, microsserviços e arquiteturas backend modernas.',
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: 'https://lucierlima.dev',
+    canonical: 'https://lucier-portifolio.vercel.app/',
   },
 }
 
@@ -81,7 +85,7 @@ export default function RootLayout({
               jobTitle: 'Backend Developer',
               description:
                 'Especializado em Node.js, NestJS, TypeScript, PostgreSQL, Docker',
-              url: 'https://lucierlima.dev',
+              url: 'https://lucier-portifolio.vercel.app/',
               sameAs: [
                 'https://github.com/Lucier',
                 'https://www.linkedin.com/in/lucierlima',
@@ -101,7 +105,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${montserrat.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body
+        className={`${montserrat.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
